@@ -88,6 +88,7 @@ def rectboard(a,b,gamemoves):
 
 def main():
 	#tetromino:
+	domino_gamemoves = [[(0,0),(1,0)],[(0,0),(0,1)]]
 	tetromino_gamemoves = [[(0,0),(1,0),(2,0)],[(0,0),(0,1),(0,2)], [(0,0),(1,0),(1,1)],[(0,0),(1,0),(0,1)],[(0,0),(0,1),(1,1)],[(0,0),(0,1),(-1,1)]]
 	pentomino_gamemoves = pentomino_pieces()
 
@@ -99,10 +100,10 @@ def main():
 	# 		print(rectboard(i,j, gamemoves),end=' ')
 	# 	print()
 	init = time.time()
-	print("dp solution: " + str(dp(x[0],x[1], tetromino_gamemoves)))
+	print("dp solution: " + str(dp(x[0],x[1], domino_gamemoves)))
 	print("dp time: "+ str(time.time() - init))
 	midpoint = time.time()
-	print("recursion solution: " + str(rectboard(x[0],x[1],tetromino_gamemoves)))
+	print("recursion solution: " + str(rectboard(x[0],x[1],domino_gamemoves)))
 	print("recursion time: " + str(time.time()-midpoint))
 
 if __name__ == "__main__":
