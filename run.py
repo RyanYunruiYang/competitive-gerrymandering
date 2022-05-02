@@ -104,15 +104,19 @@ def rectboard(a,b,gamemoves):
 	return solve(board,a,b,gamemoves,0)
 
 def main():
-	x = list(map(int, input("Enter multiple value: ").split()))
+    if(False):
+        x = list(map(int, input("Enter multiple value: ").split()))
 
-	d = int(input("piece size: "))
-	init = time.time()
-	print("dp solution: " + str(dp(x[0],x[1], d)))
-	print("dp time: "+ str(time.time() - init))
-	midpoint = time.time()
-	print("recursion solution: " + str(rectboard(x[0],x[1],returnPieces(d))))
-	print("recursion time: " + str(time.time()-midpoint))
+        d = int(input("piece size: "))
+        init = time.time()
+        print("dp solution: " + str(dp(x[0],x[1], d)))
+        print("dp time: "+ str(time.time() - init))
+        midpoint = time.time()
+        print("recursion solution: " + str(rectboard(x[0],x[1],returnPieces(d))))
+        print("recursion time: " + str(time.time()-midpoint))
+    else:
+        for i in range(100):
+            print(str(i)+": " + str(rectboard(1,i, returnPieces(3))))
 
 if __name__ == "__main__":
 	main()
