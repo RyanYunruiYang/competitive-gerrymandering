@@ -87,13 +87,14 @@ int main() {
     cout << "Enter multiple value: "; cin >> a >> b;
     cout << "piece size: "; cin >> d;
 
-    vector<vector<int>> domino_gamesmoves_moves = {{(0,0),(1,0)},{(0,0),(0,1)}};
-	vector<vector<int>> tetromino_gamemoves = {{(0,0),(1,0),(2,0)},{(0,0),(0,1),(0,2)}, {(0,0),(1,0),(1,1)},{(0,0),(1,0),(0,1)},{(0,0),(0,1),(1,1)},{(0,0),(0,1),(-1,1)}};
-	vector<vector<int>> pentomino_gamemoves = pentomino_pieces();
+    vector<vector<int> > domino_gamesmoves_moves = {{(0,0),(1,0)},{(0,0),(0,1)}};
+	vector<vector<int> > tetromino_gamemoves = {{(0,0),(1,0),(2,0)},{(0,0),(0,1),(0,2)}, {(0,0),(1,0),(1,1)},{(0,0),(1,0),(0,1)},{(0,0),(0,1),(1,1)},{(0,0),(0,1),(-1,1)}};
+	// vector<vector<int> > pentomino_gamemoves = pentomino_pieces();
 
     std::chrono::time_point<std::chrono::system_clock> init, midpoint;
     init = std::chrono::system_clock::now();
     printf("dp solution: " + (dp(a, b, domino_gamesmoves_moves)));
     printf("dp time: " + std::string(std::chrono::system_clock::now() - init));
-    midpoint = std::chrono::system_clock::now();
+
+
 }
