@@ -18,16 +18,13 @@ def main(d,n):
         # print("i: " + str(i))
         if(i<d):
             memoization[i]=0
-
         else: #i>=d
             states = []
-
             for k in range(i-d):
                 x= memoization[k]^memoization[i-d-k]
                 states.append(x)
             # print(states)
             memoization[i] = mex(states)
-
             if(i==d):
                 memoization[i]=1
 
@@ -46,7 +43,7 @@ def main(d,n):
 
 
 if __name__ == "__main__":
-    indivValue = False
+    indivValue = True
     if(indivValue):
         d=int(sys.argv[1])
         n=int(sys.argv[2])        
