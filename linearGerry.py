@@ -30,11 +30,12 @@ def main(d,n):
 
     lastappearance = 0 
     for i in range(len(memoization)-2):
-        # print(str(i)+ ": " + str(memoization[i]))
-        if((memoization[i] == memoization[i+1]) and (memoization[i+1]==memoization[i+2])):
-            print(str(i)+ "," + str(i+1)+ "," + str(i+2)+": " + str(memoization[i]))
-        # if(memoization[i]==12):
-        #     print(str(i-lastappearance))
+        print(str(i)+ ": " + str(memoization[i]))
+        # if((memoization[i] == memoization[i+1]) and (memoization[i+1]==memoization[i+2])):
+        #     print(str(i)+ "," + str(i+1)+ "," + str(i+2)+": " + str(memoization[i]))
+        # if(memoization[i]==0):
+        #     # print(str(i-lastappearance))
+        #     print(i)
         #     lastappearance = i
 
     plt.plot([i for i in range(len(memoization))], memoization)
@@ -46,7 +47,7 @@ if __name__ == "__main__":
     indivValue = True
     if(indivValue):
         d=int(sys.argv[1])
-        n=int(sys.argv[2])        
+        n=int(sys.argv[2])
         main(d,n)
     else:
         for d in range(2,20):

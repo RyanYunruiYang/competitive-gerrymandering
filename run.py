@@ -67,7 +67,7 @@ def dp(a,b,d):
 	currtime = 0
 	for o in range(2**(a*b)):
 		if(o%(2**(a*b-percsize))==0):
-			print(str(o/(2**(a*b-percsize))) + " out of "+ str(2**percsize)+". Seconds needed: " + str(time.time()-currtime))
+			# print(str(o/(2**(a*b-percsize))) + " out of "+ str(2**percsize)+". Seconds needed: " + str(time.time()-currtime))
 			currtime = time.time()
 
 		board = [[0 for j in range(b)] for i in range(a)]
@@ -96,7 +96,7 @@ def dp(a,b,d):
 							states.append(dpvalues[BoardToInt(newboard,a,b)])
 			dpvalues[o] = mex(states)
 
-	print(dpvalues)
+	# print(dpvalues)
 	return dpvalues[2**(a*b)-1]
 
 def rectboard(a,b,gamemoves):
@@ -104,19 +104,32 @@ def rectboard(a,b,gamemoves):
 	return solve(board,a,b,gamemoves,0)
 
 def main():
-    if(False):
-        x = list(map(int, input("Enter multiple value: ").split()))
+    if(True):
+        x = list(map(int, input("Enter a b d: ").split()))
 
-        d = int(input("piece size: "))
         init = time.time()
-        print("dp solution: " + str(dp(x[0],x[1], d)))
+        print("dp solution: " + str(dp(x[0],x[1], x[2])))
         print("dp time: "+ str(time.time() - init))
         midpoint = time.time()
-        print("recursion solution: " + str(rectboard(x[0],x[1],returnPieces(d))))
+        print("recursion solution: " + str(rectboard(x[0],x[1],returnPieces(x[2]))))
         print("recursion time: " + str(time.time()-midpoint))
     else:
         for i in range(100):
             print(str(i)+": " + str(rectboard(1,i, returnPieces(3))))
+	
+	# d=2
+	# n=3
+	# table = [[-1 for i in range(n)] for j in range(n)]
+	# for i in range(n):
+	# 	for j in range(n):
+	# 		if(i<=j):
+	# 			table[i][j] = dp(2*i+1,2*j+1,d)
+	# 		if(i>j):
+	# 			table[i][j] = table[j][i]
+	# for i in range(n):
+	# 	for j in range(n):
+	# 		print(table[i][j],end=' ')
+	# 	print()
 
 if __name__ == "__main__":
 	main()
