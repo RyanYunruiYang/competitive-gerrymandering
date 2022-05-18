@@ -116,16 +116,7 @@ public class dp {
 									valid = false;
 								}
 							}
-
-							// for (int x=0;x<a ;x++ ) {
-							// 	for (int y=0;y<b ;y++ ) {
-							// 		System.out.print(newboard[x][y]+" ");
-							// 	}
-							// 	System.out.println();
-							// }
-
-							// System.out.println(o + " " + valid);
-							// System.out.println();							
+													
 							if(valid) {
 								states.add(dpvalues[BoardToInt(newboard,a,b)]);
 							}

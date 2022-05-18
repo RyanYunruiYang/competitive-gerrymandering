@@ -106,7 +106,6 @@ def rectboard(a,b,gamemoves):
 def main():
     if(True):
         x = list(map(int, input("Enter a b d: ").split()))
-
         init = time.time()
         print("dp solution: " + str(dp(x[0],x[1], x[2])))
         print("dp time: "+ str(time.time() - init))
