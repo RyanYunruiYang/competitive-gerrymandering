@@ -33,15 +33,18 @@ public class debug {
 		
 		// }
 
-		int[][] board = new int[5][5];
+		// int[][] board = new int[5][5];
 
-		replace(board);
+		// replace(board);
 
-		for (int i=0;i<board.length ;i++ ) {
-			for (int j=0;j<board[0].length ;j++ ) {
-				System.out.print(board[i][j]);
-			}
-			System.out.println();
-		}
+		// for (int i=0;i<board.length ;i++ ) {
+		// 	for (int j=0;j<board[0].length ;j++ ) {
+		// 		System.out.print(board[i][j]);
+		// 	}
+		// 	System.out.println();
+		// }
+		final long startTime = System.currentTimeMillis();		
+		int[][] test = new int[(int) Math.pow(2,18)][(int) Math.pow(2,18)];
+		System.out.println(System.currentTimeMillis()-startTime);
 	}
 }

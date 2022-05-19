@@ -93,7 +93,7 @@ public class dpWithDFS {
 		for (int o=0;o<Math.pow(2,a*b) ;o++ ) {
 			int[][] board = new int[a][b];
 			if(!debug){
-				int p = 10;
+				int p = 9;
 				if((o % (Math.pow(2,a*b-p))) == 0){
 					System.out.println(o + " out of " + Math.pow(2,a*b) + " (out of " + Math.pow(2,p) + " this is " + o/Math.pow(2,a*b-p) + ")");
 					System.out.println("Total execution time so far (seconds): " + ((System.currentTimeMillis() - startTime))/1000.0);						
@@ -140,7 +140,7 @@ public class dpWithDFS {
 						}
 					}
 				}
-				if(debug) {
+				if(debug || (o==(int)Math.pow(2,a*b)-1)) {
 					for (int i=0;i<n ;i++ ) {
 						System.out.print(nimocc[i] + " ");
 					}
