@@ -176,8 +176,8 @@ public class dpWithDFS {
 					// nimvalues[a][b] = dp(a,b,d);
 					System.out.println(a+"x"+b);
 					boolean allP1 = true;
-					for(int d=1; d<=10; d++){
-						// System.out.println(d+": " + dp(a,b,d));
+					for(int d=1; d<=maxboardsize; d++){
+						System.out.println(d+": " + dp(a,b,d));
 						if(dp(a,b,d)==0){
 							allP1 = false;
 						}
