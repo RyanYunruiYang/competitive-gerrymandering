@@ -167,27 +167,46 @@ public class dpWithDFS {
 		// Test 2
 		// int d = console.nextInt();
 		int tablesize = 8;
-		int maxboardsize = 20;
+		int maxboardsize = 25;
 		// int[][] nimvalues = new int[tablesize+1][tablesize+1];
 
-		for(int a=1; a<=tablesize; a++ ) {
-			for(int b=1; b<=tablesize; b++) {
-				if(a*b<=maxboardsize) {//next available is 27
-					// nimvalues[a][b] = dp(a,b,d);
-					System.out.println(a+"x"+b);
-					boolean allP1 = true;
-					for(int d=1; d<=maxboardsize; d++){
-						System.out.println(d+": " + dp(a,b,d));
-						if(dp(a,b,d)==0){
-							allP1 = false;
+		for(int prod=1; prod<=maxboardsize; prod++ ){
+			for(int a=1; a<=tablesize; a++ ) {
+				for(int b=1; b<=tablesize; b++) {
+					if(a*b==prod){
+						System.out.println(a+"x"+b);
+						boolean allP1 = true;
+						for(int d=1; d<=a*b; d++){
+							System.out.println(d+": " + dp(a,b,d));
+							if(dp(a,b,d)==0){
+								allP1 = false;
+							}
 						}
-					}
-					if(allP1){
-						System.out.println(a+"x"+b +" board is all P1 win");						
+						if(allP1){
+							System.out.println(a+"x"+b +" board is all P1 win");						
+						}						
 					}
 				}
 			}
 		}
+		// for(int a=1; a<=tablesize; a++ ) {
+		// 	for(int b=1; b<=tablesize; b++) {
+		// 		if(a*b<=maxboardsize) {//next available is 27
+		// 			// nimvalues[a][b] = dp(a,b,d);
+		// 			System.out.println(a+"x"+b);
+		// 			boolean allP1 = true;
+		// 			for(int d=1; d<=maxboardsize; d++){
+		// 				System.out.println(d+": " + dp(a,b,d));
+		// 				if(dp(a,b,d)==0){
+		// 					allP1 = false;
+		// 				}
+		// 			}
+		// 			if(allP1){
+		// 				System.out.println(a+"x"+b +" board is all P1 win");						
+		// 			}
+		// 		}
+		// 	}
+		// }
 		// for(int a=1; a<=tablesize; a++ ) {
 		// 	System.out.print(a+" & ");
 		// 	for(int b=1; b<=tablesize; b++) {
